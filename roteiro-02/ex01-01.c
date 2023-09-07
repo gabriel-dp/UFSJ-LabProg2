@@ -103,7 +103,7 @@ int main() {
                 scanf("%d", &numero);
                 setbuf(stdin, NULL);
                 printf("Titular: ");
-                fgets(titular, NOME_CHARS, stdin);
+                fgets(titular, NOME_CHARS + 1, stdin);
                 if (titular[strlen(titular) - 1] == '\n')
                     titular[strlen(titular) - 1] = '\0';
                 setbuf(stdin, NULL);
