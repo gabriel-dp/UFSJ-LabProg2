@@ -60,7 +60,6 @@ int getOpcao() {
     printf("(%d) Imprimir catalogo\n", IMPRIMIR);
     printf("(%d) Sair\n", SAIR);
     printf("======================\n");
-
     printf("Opcao escolhida: ");
     scanf("%d", &opcao);
 
