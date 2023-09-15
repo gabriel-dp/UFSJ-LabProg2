@@ -1,0 +1,2 @@
+Um Tipo Abstrato de Dados é um conjunto de atributos e operações que tem como função principal abstrair as características de um elemento em um tipo.
+Os TADs facilitam a forma de lidar com entidades que possuem vários atributos únicos e operações que devem seguir regras específicas, possibilitando o encapsulamento da entidade.
