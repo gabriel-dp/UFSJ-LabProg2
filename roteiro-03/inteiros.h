@@ -13,11 +13,11 @@ void remover(Inteiros* c, int posicao);
 Inteiros uniao(Inteiros* c1, Inteiros* c2);
 Inteiros intersecao(Inteiros* c1, Inteiros* c2);
 Inteiros diferenca(Inteiros* c1, Inteiros* c2);
-int imenor(Inteiros* c);
-int imaior(Inteiros* c);
+int menor(Inteiros* c);
+int maior(Inteiros* c);
 int busca(Inteiros* c, int numero);
 int iguais(Inteiros* c1, Inteiros* c2);
 int vazio(Inteiros* c);
-void imprime(Inteiros*c);
+void imprime(char* mensagem, Inteiros* c);
 
 #endif
