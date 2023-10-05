@@ -48,7 +48,7 @@ int tamanhoFila(Fila* fi) {
 }
 
 int estaVazia(Fila* fi) {
-    return (fi->ini == NULL);
+    return (fi == NULL || fi->ini == NULL);
 }
 
 int enfileirar(Fila* fi, int elem) {
@@ -64,6 +64,7 @@ int enfileirar(Fila* fi, int elem) {
         fi->fim->prox = novo;
         fi->fim = novo;
     }
+    fi->qtd++;
 
     return 1;
 }
@@ -73,11 +74,10 @@ int desenfileirar(Fila* fi) {
 
     NO* aux = fi->ini;
     fi->ini = fi->ini->prox;
-    destroiNo(aux);
+    if (estaVazia(fi)) fi->fim = NULL;
 
-    if (estaVazia(fi)) {
-        fi->fim = NULL;
-    }
+    destroiNo(aux);
+    fi->qtd--;
 
     return 1;
 }

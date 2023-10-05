@@ -1,6 +1,6 @@
 # UFSJ - Laboratório de Programação II
 
-All exercises solved during class made taught by Professor Guilherme Pena
+All exercises solved during class taught by Professor Guilherme Pena
 
 ## Roteiros
 
@@ -11,3 +11,5 @@ All exercises solved during class made taught by Professor Guilherme Pena
 - [`Roteiro 03`](./roteiro-03/)
 
 - [`Roteiro 04`](./roteiro-04/)
+
+- [`Roteiro 05`](./roteiro-05/)

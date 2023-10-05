@@ -6,20 +6,20 @@
  *  O ARQUIVO FUNCIONA PARA AS DUAS IMPLEMENTACOES DE FILA
  *  BASTA IMPORTAR APENAS A BIBLIOTECA DESEJADA
  *
- *  EX01-01 = LISTA SEQUENCIAL ESTATICA
- *  EX01-02 = LISTA SIMPLESMENTE ENCADEADA
+ *  EX02-01 = PILHA SEQUENCIAL ESTATICA
+ *  EX02-02 = PILHA SIMPLESMENTE ENCADEADA
  *
  */
 
-// #include "ex01-01.h"
-#include "ex01-02.h"
+// #include "ex02-01.h"
+#include "ex02-02.h"
 
 enum {
     EXIT = 0,
     CREATE,
-    QUEUE,
+    STACK,
     START,
-    DEQUEUE,
+    UNSTACK,
     PRINT,
     DESTROY
 } Options;
@@ -29,9 +29,9 @@ int getOption() {
 
     printf("\n====================\n");
     printf("(%d) Criar\n", CREATE);
-    printf("(%d) Enfileirar\n", QUEUE);
-    printf("(%d) Ver inicio\n", START);
-    printf("(%d) Desenfileirar\n", DEQUEUE);
+    printf("(%d) Empilhar\n", STACK);
+    printf("(%d) Ver topo\n", START);
+    printf("(%d) Desempilhar\n", UNSTACK);
     printf("(%d) Imprimir\n", PRINT);
     printf("(%d) Destruir\n", DESTROY);
     printf("(%d) Sair\n", EXIT);
@@ -45,57 +45,58 @@ int getOption() {
 }
 
 int runMenu() {
-    Fila* queue = NULL;
+    Pilha* stack = NULL;
     int exit = 0, item;
 
     do {
         switch (getOption()) {
             case CREATE:
-                if (queue != NULL) {
-                    destroiFila(&queue);
-                    printf("Fila resetada");
+                if (stack != NULL) {
+                    destroiPilha(&stack);
+                    printf("Pilha resetada");
                 }
-                queue = criaFila();
+                stack = criaPilha();
                 break;
 
-            case QUEUE:
-                printf("Elemento para enfileirar: ");
+            case STACK:
+                printf("Elemento para empilhar: ");
                 scanf("%d", &item);
-                if (enfileirar(queue, item)) {
-                    printf("Enfileirou (%d)", item);
+
+                if (empilhar(stack, item)) {
+                    printf("Empilhou (%d)", item);
                 } else {
-                    printf("Nao foi possivel enfileirar (%d)", item);
+                    printf("Nao foi possivel enpilhar (%d)", item);
                 }
                 break;
 
             case START:
-                if (verInicio(queue, &item)) {
-                    printf("Inicio da fila = %d\n", item);
+                if (verTopo(stack, &item)) {
+                    printf("Topo da pilha = %d\n", item);
                 } else {
-                    printf("Nao foi possivel ver o inicio da fila");
+                    printf("Nao foi possivel ver o topo da pilha");
                 }
                 break;
 
-            case DEQUEUE:
-                if (desenfileirar(queue)) {
-                    printf("Desenfileirou o primeiro elemento");
+            case UNSTACK:
+                if (desempilhar(stack)) {
+                    printf("Desempilhou o primeiro elemento");
                 } else {
-                    printf("Nao foi possivel desenfileirar");
+                    printf("Nao foi possivel desempilhar");
                 }
                 break;
 
             case PRINT:
-                imprime(queue);
+                imprime(stack);
                 break;
 
             case DESTROY:
-                destroiFila(&queue);
-                printf("Fila destruida");
+                destroiPilha(&stack);
+                printf("Pilha destruida");
                 break;
 
             case EXIT:
-                if (queue != NULL) {
-                    destroiFila(&queue);
+                if (stack != NULL) {
+                    destroiPilha(&stack);
                 }
                 printf("Programa encerrado");
                 exit = 1;
