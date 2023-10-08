@@ -3,7 +3,7 @@
 
 /*
  *
- *  O ARQUIVO FUNCIONA PARA AS DUAS IMPLEMENTACOES DE FILA
+ *  O ARQUIVO FUNCIONA PARA AS DUAS IMPLEMENTACOES DE DEQUE
  *  BASTA IMPORTAR APENAS A BIBLIOTECA DESEJADA
  *
  *  EX01-01 = DEQUE SEQUENCIAL ESTATICO
@@ -91,7 +91,7 @@ int runMenu() {
                     printf("Nao foi possivel ver o inicio do deque");
                 }
                 break;
-            
+
             case END:
                 if (verFim(deque, &item)) {
                     printf("Fim do deque = %d\n", item);
@@ -107,7 +107,7 @@ int runMenu() {
                     printf("Nao foi possivel desenfileirar");
                 }
                 break;
-            
+
             case DEQUEUE_END:
                 if (removeFim(deque)) {
                     printf("Desenfileirou o ultimo elemento");
