@@ -10,13 +10,13 @@ typedef struct {
     int* IA;
     int* JA;
     int lin, col, QNN, QI;
-} MEsparsaCSR;
+} Matriz;
 // QNN - Quantidade de Nao Nulos
 // QI - Quantidade de Inseridos
 
-MEsparsaCSR* criaMatrizEsparsa(int l, int c, int qnn) {
-    MEsparsaCSR* ms;
-    ms = (MEsparsaCSR*)malloc(sizeof(MEsparsaCSR));
+Matriz* criaMatriz(int l, int c, int qnn) {
+    Matriz* ms;
+    ms = (Matriz*)malloc(sizeof(Matriz));
     if (ms != NULL) {
         if (l <= 0 || c <= 0 || qnn < 0) {
             printf("Valores invalidos, matriz nao criada!\n");
@@ -53,7 +53,7 @@ int* meuRealloc(int* v, int tam) {
     return aux;
 }
 
-void imprimeEsparsaVetores(MEsparsaCSR* ms) {
+void imprimeVetores(Matriz* ms) {
     if (ms == NULL) return;
     int i, j;
     printf("Matriz Esparsa, Tam: %d x %d:\n", ms->lin, ms->col);
@@ -72,7 +72,7 @@ void imprimeEsparsaVetores(MEsparsaCSR* ms) {
     printf("]\n\n");
 }
 
-int insereElemEsparsa(MEsparsaCSR* ms, int elem, int i, int j) {
+int insereElem(Matriz* ms, int elem, int i, int j) {
     if (ms == NULL) return 0;
     if (i < 0 || j < 0 || i >= ms->lin || j >= ms->col) {
         printf("Valores invalidos, elem nao inserido!\n");
@@ -109,11 +109,11 @@ int insereElemEsparsa(MEsparsaCSR* ms, int elem, int i, int j) {
     } else {  // Atualiza um valor existente
         ms->A[index] = elem;
     }
-    imprimeEsparsaVetores(ms);
+    imprimeVetores(ms);
     return 1;
 }
 
-int removeElemEsparsa(MEsparsaCSR* ms, int i, int j) {
+int removeElem(Matriz* ms, int i, int j) {
     if (ms == NULL) return 0;
     if (i < 0 || j < 0 || i >= ms->lin || j >= ms->col) {
         printf("Valores invalidos, elem nao removido!\n");
@@ -146,11 +146,11 @@ int removeElemEsparsa(MEsparsaCSR* ms, int i, int j) {
         printf("Elemento nao existente\n");
         return 0;
     }
-    imprimeEsparsaVetores(ms);
+    imprimeVetores(ms);
     return 1;
 }
 
-int consultaElemEsparsa(MEsparsaCSR* ms, int i, int j) {
+int consultaElem(Matriz* ms, int i, int j) {
     if (ms == NULL) return 0;
     if (i < 0 || j < 0 || i >= ms->lin || j >= ms->col) {
         printf("Valores invalidos, elem inexistente!\n");
@@ -162,24 +162,25 @@ int consultaElemEsparsa(MEsparsaCSR* ms, int i, int j) {
     return 0;
 }
 
-void imprimeEsparsa(MEsparsaCSR* ms) {
+void imprime(Matriz* ms) {
     if (ms == NULL) return;
     int i, j;
-    imprimeEsparsaVetores(ms);
+    imprimeVetores(ms);
     printf("Matriz Original:\n");
     for (i = 0; i < ms->lin; i++) {
         for (j = 0; j < ms->col; j++)
-            printf("%d\t", consultaElemEsparsa(ms, i, j));
+            printf("%d\t", consultaElem(ms, i, j));
         printf("\n");
     }
 }
 
-void destroiMatrizEsparsa(MEsparsaCSR* ms) {
-    if (ms != NULL) {
-        free(ms->A);
-        free(ms->IA);
-        free(ms->JA);
-        free(ms);
+void destroiMatriz(Matriz** ms) {
+    if (*ms != NULL) {
+        free((*ms)->A);
+        free((*ms)->IA);
+        free((*ms)->JA);
+        free(*ms);
+        *ms = NULL;
     }
 }
 

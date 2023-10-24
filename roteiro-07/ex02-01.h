@@ -1,5 +1,5 @@
-#ifndef Matriz_H
-#define Matriz_H
+#ifndef MATRIZFAIXA_H
+#define MATRIZFAIXA_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -42,12 +42,13 @@ Matriz* criaMatriz(int t) {
     return mf;
 }
 
-void destroiMatriz(Matriz* mf) {
-    if (mf != NULL) {
-        free(mf->diagonal);
-        free(mf->superior);
-        free(mf->inferior);
-        free(mf);
+void destroiMatriz(Matriz** mf) {
+    if (*mf != NULL) {
+        free((*mf)->diagonal);
+        free((*mf)->superior);
+        free((*mf)->inferior);
+        free(*mf);
+        *mf = NULL;
     }
 }
 
