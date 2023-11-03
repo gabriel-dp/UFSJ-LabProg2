@@ -50,7 +50,6 @@ int runMenu() {
                     destroiABP(&abp);
                 }
                 abp = criaABP();
-
                 break;
 
             case INSERT:
