@@ -1,0 +1,1 @@
+A complexidade da operação de encontrar os funcionários com maior e menor salário é O(n), tendo em vista que as AVLs possuem a inserção mais custosa para que a pesquisa seja mais eficiente do que em árvores binárias comuns.
