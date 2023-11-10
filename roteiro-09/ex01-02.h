@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAIOR(a, b) ((a > b) ? (a) : (b))
 
@@ -70,7 +71,6 @@ int altura(NO* raiz) {
 
 int FB(NO* raiz) {
     if (raiz == NULL) return 0;
-    printf("Calculando FB do (%d)..\n", raiz->info);
     return altura(raiz->esq) - altura(raiz->dir);
 }
 
@@ -271,18 +271,15 @@ int removeRec(NO** raiz, Funcionario elem) {
         NO* aux;
         if ((*raiz)->esq == NULL && (*raiz)->dir == NULL) {
             // Caso 1 - NO sem filhos
-            printf("Caso 1: Liberando %d..\n", (*raiz)->info);
             liberarNO(*raiz);
             *raiz = NULL;
         } else if ((*raiz)->esq == NULL) {
             // Caso 2.1 - Possui apenas uma subarvore direita
-            printf("Caso 2.1: Liberando %d..\n", (*raiz)->info);
             aux = *raiz;
             *raiz = (*raiz)->dir;
             liberarNO(aux);
         } else if ((*raiz)->dir == NULL) {
             // Caso 2.2 - Possui apenas uma subarvore esquerda
-            printf("Caso 2.2: Liberando %d..\n", (*raiz)->info);
             aux = *raiz;
             *raiz = (*raiz)->esq;
             liberarNO(aux);
@@ -291,7 +288,6 @@ int removeRec(NO** raiz, Funcionario elem) {
             // Duas estrategias:
             // 3.1 - Substituir pelo NO com o MAIOR valor da subarvore esquerda
             // 3.2 - Substituir pelo NO com o MENOR valor da subarvore direita
-            printf("Caso 3: Liberando %d..\n", (*raiz)->info);
             // Estrategia 3.1:
             NO* Filho = (*raiz)->esq;
             while (Filho->dir != NULL)  // Localiza o MAIOR valor da subarvore esquerda
@@ -349,7 +345,7 @@ void em_ordem(NO* raiz, int nivel) {
     if (raiz != NULL) {
         em_ordem(raiz->esq, nivel + 1);
         // printf("[%d, %d, %d] ", raiz->info, raiz->fb, nivel);
-        printf("[%d, %d, %d, %d] ", raiz->info, raiz->fb, nivel, raiz->alt);
+        printf("[%s, %d, %d, %d] ", raiz->info.nome, raiz->fb, nivel, raiz->alt);
         em_ordem(raiz->dir, nivel + 1);
     }
 }

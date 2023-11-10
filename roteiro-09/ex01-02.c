@@ -110,7 +110,7 @@ int runMenu() {
                 break;
 
             case PRINT_WORST:
-                itemp = melhor(*avl);
+                itemp = pior(*avl);
                 printf("Funcionario com o menor salario\n");
                 printf("Nome = %s\nContratacao = %d\nSalario = %.2lf", itemp->nome, itemp->contratacao, itemp->salario);
                 break;
