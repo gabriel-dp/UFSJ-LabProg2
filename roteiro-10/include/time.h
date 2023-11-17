@@ -8,6 +8,6 @@ typedef long double Time;
 
 Time getCpuTime();
 Time formatTime(long int sec, long int usec);
-void printElapsedTime(char* message, Time start, Time end);
+void printElapsedTime(Time start, Time end);
 
 #endif
