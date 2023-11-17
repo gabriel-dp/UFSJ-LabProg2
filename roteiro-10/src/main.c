@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "../include/sort-module.h"
 #include "../include/sort.h"
-#include "../include/sort-module-person.h"
 #include "../include/time.h"
 
 int main() {

@@ -1,0 +1,23 @@
+100
+== Statistics ==
+Elapsed time = 0.000026
+Comparations = 5050
+Swaps = 97
+
+1000
+== Statistics ==
+Elapsed time = 0.002472
+Comparations = 500500
+Swaps = 994
+
+10000
+== Statistics ==
+Elapsed time = 0.201183
+Comparations = 50005000
+Swaps = 9992
+
+100000
+== Statistics ==
+Elapsed time = 18.376507
+Comparations = 5000050000
+Swaps = 99988

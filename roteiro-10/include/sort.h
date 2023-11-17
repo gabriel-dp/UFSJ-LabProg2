@@ -1,7 +1,7 @@
 #ifndef SORT_H
 #define SORT_H
 
-#include "./sort-module-person.h"
+#include "./sort-module.h"
 
 // Sorting essential functions
 Statistics* createStatistics();

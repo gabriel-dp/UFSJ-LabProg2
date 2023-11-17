@@ -6,6 +6,15 @@
 
 #include "./time.h"
 
+/*
+#define NAME_LENGTH 50
+
+typedef struct Person {
+    char name[NAME_LENGTH + 1];
+    int age;
+} Key;
+*/
+
 typedef int Key;
 
 typedef struct {
@@ -13,7 +22,7 @@ typedef struct {
     Time start, end;
 } Statistics;
 
-void getElements(Key *arr, int quantity);
+void getElements(Key* arr, int quantity);
 int compare(Key a, Key b, int reverse, Statistics* statistics);
 void swap(Key* a, Key* b, Statistics* statistics);
 void print(Key* arr, int n);

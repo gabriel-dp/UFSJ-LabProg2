@@ -55,13 +55,13 @@ void bubbleSort(Key* arr, int n, int reverse, Statistics* statistics) {
 }
 
 // Function to exit the program if there is an error
-void throwError(char *message) {
+void throwError(char* message) {
     printf("%s - Aborting...\n", message);
     exit(1);
 }
 
 // User select the sorting options
-void getOptions(void (**sortFunction)(Key*, int, int, Statistics *), int *order, int *quantity) {
+void getOptions(void (**sortFunction)(Key*, int, int, Statistics*), int* order, int* quantity) {
     int option;
 
     // User selects the algorithm
@@ -106,4 +106,3 @@ void getOptions(void (**sortFunction)(Key*, int, int, Statistics *), int *order,
 
     printf("\n");
 }
-
