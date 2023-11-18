@@ -21,3 +21,5 @@ All exercises solved during class taught by Professor Guilherme Pena
 - [`Roteiro 08`](./roteiro-08/)
 
 - [`Roteiro 09`](./roteiro-09/)
+
+- [`Roteiro 10`](./roteiro-10/)
