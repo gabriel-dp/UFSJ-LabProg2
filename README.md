@@ -1,6 +1,6 @@
 # UFSJ - Laboratório de Programação II
 
-All exercises solved during class taught by Professor Guilherme Pena
+All exercises solved during "Programming Laboratory II" subject.
 
 ## Roteiros
 
