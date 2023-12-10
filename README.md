@@ -27,3 +27,5 @@ All exercises solved during "Programming Laboratory II" subject.
 - [`Roteiro 11`](./roteiro-11/)
 
 - [`Roteiro 12`](./roteiro-12/)
+
+- [`Roteiro 13`](./roteiro-13/)
